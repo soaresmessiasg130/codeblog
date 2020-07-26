@@ -5,7 +5,6 @@ import java.time.LocalDate;
 import javax.validation.constraints.NotBlank;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.databind.jsonFormatVisitors.JsonFormatTypes;
 
 import javax.persistence.*;
 
