@@ -11,7 +11,7 @@
 	<groupId>com.codeblog</groupId>
 	<artifactId>codeblog</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>codeblog</name>
+	<name>demo</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
@@ -62,6 +62,15 @@
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-test</artifactId>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-jdbc</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>javax.validation</groupId>
+			<artifactId>validation-api</artifactId>
+			<version>2.0.0.Final</version>
 		</dependency>
 	</dependencies>
 
