@@ -1,1 +1,91 @@
-<h1>Ola Mundo com Spring Boot!</h1>
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <!-- <link rel="stylesheet" type="text/css" href="../static/css/styles.css"> -->
+  <title>Codeblog - by Messias Soares</title>
+</head>
+<body style="background: #000000;">
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Codeblog <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Dropdown
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+
+  <section>
+    <div class="container" style="background-color: transparent;">
+      <nav aria-label="breadcrumb" style="background-color: transparent;">
+        <ol class="breadcrumb" style="background-color: transparent;">
+          <li 
+            class="breadcrumb-item active" 
+            aria-current="page"
+            style="background-color: transparent;">
+            <h3>Posts</h3>
+          </li>
+        </ol>
+      </nav>
+
+
+      <div 
+        class="card shadow-sm bg-white rounded" 
+        th:each="post : ${AllPosts}">
+        <div class="card-body">
+          <p class="card-subtitle text-muted">
+            <span th:text="${post.Author}"></span>
+            <span th:text="${post.Posted}"></span>
+          </p>
+
+          <a href="#">
+            <h4 class="card-title">
+              <span th:text="${post.title}"></span>
+            </h4>
+          </a>
+
+          <p class="card-text">
+            <span th:utext="${#strings.abbreviate(post.Description, 400)}">
+            </span>
+            <p>
+              Aquele que ama ou exerce ou deseja a dor, pode ocasionalmente adquirir algum prazer na labuta. Para dar um exemplo trivial, qual de nós se submete a laborioso exercício físico, exceto para obter alguma vantagem com isso. Desmoralizado pelos encantos do prazer, percebe que a dor não resulta em prazer algum. Está tão cego pelo desejo que não pode prever quem não cumprirá seu dever por fraqueza de vontade.
+            </p>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+</body>
+</html>
